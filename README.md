@@ -20,4 +20,3 @@ console.log(mansplain(my_string));
 
 - matches on a word with digits, hypens, or periods followed by (n), where n is a single digit
 - will remove `npm-` prefix
-- link is namespaced with `cli/`
