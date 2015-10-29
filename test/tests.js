@@ -22,4 +22,9 @@ describe('mansplain', function () {
     const result = mansplain({ input: input, npm_mode: true });
     result.should.equal('<li><a href="/files/package.json">package.json</a></li>');
   });
+  it('should not change prefix to files for not special cmds in npm_mode', function() {
+    const input = '<li>npm-cmd(9)</li>';
+    const result = mansplain({ input: input, prefix: 'cli', npm_mode: true });
+    result.should.equal('<li><a href="/cli/cmd">npm-cmd</a></li>');
+  });
 });
