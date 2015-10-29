@@ -14,7 +14,12 @@ describe('mansplain', function () {
   });
   it('should prefix the href variable if prefix is passed', function() {
     const input = '<li>npm-cmd(9)</li>';
-    const result = mansplain({ input: input, skip: false, prefix: 'cli'});
+    const result = mansplain({ input: input, prefix: 'cli'});
     result.should.equal('<li><a href="/cli/cmd">npm-cmd</a></li>'); 
+  });
+  it('should change prefix to files for special cmds in npm_mode', function() {
+    const input = '<li>package.json(1)</li>';
+    const result = mansplain({ input: input, npm_mode: true });
+    result.should.equal('<li><a href="/files/package.json">package.json</a></li>');
   });
 });
