@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/ashleygwilliams/mansplain.svg?branch=master)](https://travis-ci.org/ashleygwilliams/mansplain)
 [![Code Climate](https://codeclimate.com/github/ashleygwilliams/mansplain/badges/gpa.svg)](https://codeclimate.com/github/ashleygwilliams/mansplain)
-
+[![npm version](https://badge.fury.io/js/mansplain.svg)](https://badge.fury.io/js/mansplain)
 
 a tool for converting man-style links to clickable html anchor elements.
 made p specifically for the [npm cli reference](http://docs.npmjs.com)
