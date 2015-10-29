@@ -1,5 +1,5 @@
-function mansplain(html) {
-  var first = true;
+function mansplain(html, skip) {
+  var first = skip;
   var result = html.replace(/([-.a-z]+)\((\d)\)/g, function(match, p1, p2) {
     if (first) {
       first = false;
