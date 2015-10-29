@@ -32,7 +32,7 @@ console.log(result);
 
 #### opts:
 
-`mansplain` can take 2 arguments:
+`mansplain` can take 3 arguments:
 - `input`: a string to be converted
 - `skip`: a boolean, if set to `true`, `mansplain` will skip the first match, e.g.:
 
@@ -45,25 +45,15 @@ console.log(result);
 
     ```
 
-- `prefix`: a string, serves as a prefix for href value. 
+- `prefix`: a hash, serves as a prefix for href value. 
   ** DO NOT INCLUDE A TRAILING OR LEADING SLASH **
 
     ```javascript
-    var input = "<li>npm-cmd(9)</li>";
-    var result = mansplain({ input: input, prefix: 'cli'});
+    var input = "<li>npm-cmd(1)</li>";
+    var result = mansplain({ input: input, prefix: { 1:'cli'}});
     console.log(result);
 
     //=> '<li><a href="cli/cmd">cmd</a></li>'
-    ```
-
-- `npm_mode`: a boolean that sets the prefix for specific values to `files` or `misc`
-
-    ```javascript
-    var input = "<li>package.json(1)</li>";
-    var result = mansplain({ input: input, prefix: 'cli', npm_mode: true});
-    console.log(result);
-
-    //=> '<li><a href="files/package.json">package.json</a></li>'
     ```
 
 ## testing
