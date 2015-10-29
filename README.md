@@ -1,12 +1,18 @@
 # mansplain
 > convert npm man links to html anchor elements
 
-## usage
+a tool for converting man-style links to clickable html anchor elements.
+made p specifically for the [npm cli reference](http://docs.npmjs.com)
 
-#### to install:
+![man-explain](./man-explain.png)
+
+## installation
+
 ```bash
-npm install mansplain --save
+npm install mansplain
 ```
+
+## usage
 
 #### default usage:
 
