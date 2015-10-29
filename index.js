@@ -17,7 +17,7 @@ function mansplain(opts) {
     }
     var cmd = p1.replace(/npm-/, "");
     if (npm_mode && FILES_DOCS.indexOf(cmd) !== -1) {
-      prefix = "/files";
+      return '<a href="/files/' + cmd + '">' + p1 + '</a>';
     }
     return '<a href="' + prefix + '/' + cmd + '">' + p1 + '</a>';
   });
