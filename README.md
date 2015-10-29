@@ -56,7 +56,7 @@ console.log(result);
     //=> '<li><a href="cli/cmd">cmd</a></li>'
     ```
 
-- `npm_mode`: a boolean that sets the prefix for specific values to `files`
+- `npm_mode`: a boolean that sets the prefix for specific values to `files` or `misc`
 
     ```javascript
     var input = "<li>package.json(1)</li>";
