@@ -3,18 +3,37 @@
 
 ## usage
 
-```
+#### to install:
+```bash
 npm install mansplain --save
 ```
 
-```
+#### default usage:
+
+```javascript
 const mansplain = require('mansplain');
 
-var my_string = "<li>npm-cmd(9)</li>";
-console.log(mansplain(my_string));
+var input = "<li>npm-cmd(9)</li>";
+var result = mansplain(my_string);
+console.log(result);
 
-#=> '<li><a href="cli/cmd">cmd</a></li>'
+//=> '<li><a href="cli/cmd">cmd</a></li>'
 ```
+
+#### flags:
+
+`mansplain` can take 2 arguments:
+- a string to be converted
+- a boolean: if set to `true`, `mansplain` will skip the first match, e.g.:
+
+    ```javascript
+    var input = '<li>npm-cmd(9)</li><li>npm-install(1)</li>'
+    var result = mansplain(input, true);
+    console.log(result);    
+
+    //=> '<li>npm-cmd</li><li><a href="install">npm-install</a></li>'
+
+    ```
 
 ## testing
 
