@@ -1,13 +1,15 @@
-function mansplain(html, skip, prefix) {
+function mansplain(opts) {
+  var input = opts.input;
+  var skip = opts.skip;
+  var prefix = opts.prefix;
   if (!prefix) {
     prefix = "";
   } else {
     prefix = '/' + prefix;
   }
-  var first = skip;
-  var result = html.replace(/([-.a-z]+)\((\d)\)/g, function(match, p1, p2) {
-    if (first) {
-      first = false;
+  var result = input.replace(/([-.a-z]+)\((\d)\)/g, function(match, p1, p2) {
+    if (skip) {
+      skip = false;
       return match.replace(/\(\d\)/, '');
     }
     var cmd = p1.replace(/npm-/, "");

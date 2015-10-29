@@ -24,33 +24,33 @@ npm install mansplain
 const mansplain = require('mansplain');
 
 var input = "<li>npm-cmd(9)</li>";
-var result = mansplain(my_string);
+var result = mansplain({ input: input });
 console.log(result);
 
 //=> '<li><a href="cmd">cmd</a></li>'
 ```
 
-#### flags:
+#### opts:
 
 `mansplain` can take 2 arguments:
-- a string to be converted
-- a boolean: if set to `true`, `mansplain` will skip the first match, e.g.:
+- `input`: a string to be converted
+- `skip`: a boolean, if set to `true`, `mansplain` will skip the first match, e.g.:
 
     ```javascript
     var input = '<li>npm-cmd(9)</li><li>npm-install(1)</li>'
-    var result = mansplain(input, true);
+    var result = mansplain({ input: input, skip: true});
     console.log(result);    
 
     //=> '<li>npm-cmd</li><li><a href="install">npm-install</a></li>'
 
     ```
 
-- a string: serves as a prefix for href value. 
+- `prefix`: a string, serves as a prefix for href value. 
   ** DO NOT INCLUDE A TRAILING OR LEADING SLASH **
 
     ```javascript
     var input = "<li>npm-cmd(9)</li>";
-    var result = mansplain(my_string, false, 'cli');
+    var result = mansplain({ input: input, skip: false, prefix: 'cli'});
     console.log(result);
 
     //=> '<li><a href="cli/cmd">cmd</a></li>'
