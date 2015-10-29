@@ -27,7 +27,7 @@ var input = "<li>npm-cmd(9)</li>";
 var result = mansplain(my_string);
 console.log(result);
 
-//=> '<li><a href="cli/cmd">cmd</a></li>'
+//=> '<li><a href="cmd">cmd</a></li>'
 ```
 
 #### flags:
@@ -43,6 +43,17 @@ console.log(result);
 
     //=> '<li>npm-cmd</li><li><a href="install">npm-install</a></li>'
 
+    ```
+
+- a string: serves as a prefix for href value. 
+  ** DO NOT INCLUDE A TRAILING OR LEADING SLASH **
+
+    ```javascript
+    var input = "<li>npm-cmd(9)</li>";
+    var result = mansplain(my_string, false, 'cli');
+    console.log(result);
+
+    //=> '<li><a href="cli/cmd">cmd</a></li>'
     ```
 
 ## testing
