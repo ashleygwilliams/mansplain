@@ -1,6 +1,6 @@
 {
   "name": "mansplain",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "convert npm man links to html",
   "main": "index.js",
   "scripts": {
