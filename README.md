@@ -50,10 +50,20 @@ console.log(result);
 
     ```javascript
     var input = "<li>npm-cmd(9)</li>";
-    var result = mansplain({ input: input, skip: false, prefix: 'cli'});
+    var result = mansplain({ input: input, prefix: 'cli'});
     console.log(result);
 
     //=> '<li><a href="cli/cmd">cmd</a></li>'
+    ```
+
+- `npm_mode`: a boolean that sets the prefix for specific values to `files`
+
+    ```javascript
+    var input = "<li>package.json(1)</li>";
+    var result = mansplain({ input: input, prefix: 'cli', npm_mode: true});
+    console.log(result);
+
+    //=> '<li><a href="files/package.json">package.json</a></li>'
     ```
 
 ## testing
