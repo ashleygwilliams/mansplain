@@ -3,7 +3,7 @@ sudo: false
 node_js:
   - '0.12.7'
   - 'io.js'
-  - '4.x'
+  - '4.2.1'
 cache:
   directories:
   - node_modules
